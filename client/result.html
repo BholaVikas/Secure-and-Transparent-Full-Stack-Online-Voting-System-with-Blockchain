@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+<!-- CSS only -->
+
+<style>
+ 
+    html, body {
+  width:  100%;
+  height: 100%;
+  margin: 0;
+    }
+    .output div{
+      /* margin: auto; */
+      display: inline;
+    }
+   .Bar{
+    height: 50%;
+    width: 50%;
+   }
+   .scoreBoard{
+    text-align: center;
+    /* color: red; */
+   }
+
+   .head1 {
+    text-decoration: underline;
+    text-align: center;
+   }
+
+   .scoreBoardTabel{
+    margin-top: 5%;
+    margin-left: 40%;
+    /* margin: auto; */
+   }
+
+   th,td{
+    width: 15rem;
+    padding: 15px;
+   }
+
+   
+
+
+   
+   
+
+</style>
+<h1 class="head1">Result Page</h1>
+
+<h2 class="head1">ONLINE VOTING SYSTEM USING BLOCKCHAIN</h2>
+
+<div class="output">
+    <div class="Pie container" id="piechart"></div>    
+    </div>
+    <!-- <canvas id="myChart" style="width:700;max-width:700px;height: 700;"></canvas> -->
+    </div>
+</div>
+
+<div class="scoreBoard">
+  <h2>ScoreBoard</h2>
+  <table border = "1" cellpadding = "5" cellspacing = "5" class="scoreBoardTabel">
+    <tr>
+       <th>Winner</th>
+    </tr>
+    <tr>
+       <td>Party 1</td>
+    </tr>
+</tr>
+ </table>
+</div>
+
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script type="text/javascript">
+// Load google charts
+
+
+//pie
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['Party 1', 3],
+  ['Party 2', 2],
+  ['Party 3', 3],
+  ['Party 4', 4],
+  ['Party 5', 1],
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'width':700, 'height':700};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+
+
+
+//bar 
+// var xValues = ["Party 1", "Party 2", "Party 3", "Party 4", "Prarty 5"];
+// var yValues = [3, 2, 3, 4, 1];
+// var barColors = ["red", "green","blue","orange","brown"];
+
+// new Chart("myChart", {
+//   type: "bar",
+//   data: {
+//     labels: xValues,
+//     datasets: [{
+//       backgroundColor: barColors,
+//       data: yValues
+//     }]
+//   },
+//   options: {
+//     legend: {display: false},
+//     title: {
+//       display: true,
+//       text: "Today's Result"
+//     }
+//   }
+// });
+</script>
+<!-- JavaScript Bundle with Popper -->
+</body>
+</html>
